@@ -61,9 +61,12 @@ export function MovieCard({ movie, isComingSoon = false }: MovieCardProps) {
           <p className="text-xs font-medium uppercase tracking-wider text-red-500">
             {movie.genre}
           </p>
-          <h3 className="mt-1 line-clamp-1 text-lg font-bold text-white group-hover:text-red-400 transition-colors">
-            {movie.title}
-          </h3>
+          <Link
+            href={`/filme/${movie.id}`}
+            className="mt-1 line-clamp-1 text-lg font-bold text-white transition-colors hover:text-red-400"
+          >
+            <h3>{movie.title}</h3>
+          </Link>
         </div>
 
         <div className="mt-3 flex items-center justify-between border-t border-white/5 pt-3 text-xs text-zinc-400">

@@ -1,5 +1,19 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Cineflow
+
+The current frontend MVP includes:
+
+- `/` — home and current movie schedule
+- `/filme/[id]` — movie details and showtimes
+- `/ingressos/assentos/[sessionId]` and `/checkout` — seat selection and a demo booking
+- `/meus-ingressos` — demo bookings saved in the current browser
+- `/em-breve`, `/bomboniere`, `/login`, and `/cadastro`
+
+Movies and showtimes are sample data in `data/cinema.ts`. Booking and ticket data
+are stored in browser `localStorage`; authentication, payment, and ticket
+issuance are not connected to a backend.
+
 ## Getting Started
 
 First, run the development server:

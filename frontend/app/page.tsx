@@ -5,50 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Navbar } from "@/components/Navbar";
 import { MovieCard } from "@/components/MovieCard";
-import { Movie } from "@/types/cinema";
-
-const MOCK_MOVIES: Movie[] = [
-  {
-    id: "1",
-    title: "Horizonte Carmesim",
-    synopsis:
-      "Em uma metrópole futurista mergulhada em sombras, um piloto renegado descobre uma conspiração capaz de apagar a memória de toda a humanidade.",
-    durationMinutes: 148,
-    genre: "Ficção Científica • Ação",
-    rating: "14",
-    posterUrl: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=800&auto=format&fit=crop",
-  },
-  {
-    id: "2",
-    title: "O Último Ato em Veneza",
-    synopsis:
-      "Durante o festival de máscaras mais exclusivo da Europa, um detetive aposentado precisa desvendar um crime perfeito antes da meia-noite.",
-    durationMinutes: 126,
-    genre: "Suspense • Mistério",
-    rating: "16",
-    posterUrl: "https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=800&auto=format&fit=crop",
-  },
-  {
-    id: "3",
-    title: "Velocidade Noturna",
-    synopsis:
-      "Nas estradas clandestinas de Tóquio, dois rivais históricos colocam tudo em jogo em uma corrida sem regras sob tempestade.",
-    durationMinutes: 134,
-    genre: "Ação • Corrida",
-    rating: "12",
-    posterUrl: "https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?q=80&w=800&auto=format&fit=crop",
-  },
-  {
-    id: "4",
-    title: "Ecos do Abismo",
-    synopsis:
-      "Uma expedição científica nas fossas oceânicas encontra uma estrutura milenar que nunca deveria ter sido despertada.",
-    durationMinutes: 118,
-    genre: "Terror • Ficção",
-    rating: "16",
-    posterUrl: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=800&auto=format&fit=crop",
-  },
-];
+import { MOVIES } from "@/data/cinema";
 
 const GENRES = ["Todos", "Ação", "Ficção Científica", "Suspense", "Terror"];
 
@@ -56,12 +13,12 @@ export default function HomePage() {
   const [selectedGenre, setSelectedGenre] = useState("Todos");
   const [selectedDay, setSelectedDay] = useState("Hoje, 18 Nov");
 
-  const featuredMovie = MOCK_MOVIES[0];
+  const featuredMovie = MOVIES[0];
 
   const filteredMovies =
     selectedGenre === "Todos"
-      ? MOCK_MOVIES
-      : MOCK_MOVIES.filter((movie) =>
+      ? MOVIES
+      : MOVIES.filter((movie) =>
           movie.genre.toLowerCase().includes(selectedGenre.toLowerCase())
         );
 
